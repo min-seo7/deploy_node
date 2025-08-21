@@ -43,7 +43,7 @@ jobs:
     # 서버에 접속하여 배포 실행  scp(파일전송용)=/=ssh   
     - name: SSH into server and deploy
       run: |
-        scp   -r -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} client/dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/${{ secrets.SSH_USER }}/deploy_node_v1/server/public/
+        scp   -r -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} client/dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/${{ secrets.SSH_USER }}/deploy_node/server/public/
         ssh -vvv -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}  ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             cd ~/deploy_node_v1
             git pull origin main
