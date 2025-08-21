@@ -29,6 +29,6 @@ export default defineConfig({
   },
   build: {
     //빌드한 결과물을 서버쪽으로 넘겨줌. npm run build 지정된 경로로 build됨. server에 public/index.html생성됨.
-    outDir: "../server/public",
+   // outDir: "../server/public",
   },
 });
